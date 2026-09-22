@@ -1,0 +1,32 @@
+node_modules/
+.next/
+dev.db
+dev.db-journal
+.env
+*.log
+data/
+
+# Secrets: .env is ignored above, but backup copies of it are not covered by
+# that pattern and contain the SMTP password and JWT secret verbatim.
+.env.*
+!.env.example
+
+# Local SQLite databases and uploaded payment proofs
+*.db
+*.db-shm
+*.db-wal
+uploads/
+
+# Build/tooling noise
+.DS_Store
+Thumbs.db
+*.tsbuildinfo
+
+# Deployment archives and scratch folders — build outputs, not source.
+*.zip
+_to_delete/
+Claude outputs/
+next-env.d.ts
+
+# Stray unnamed deployment archive found at repo root (zip without extension).
+ziOUQOXp

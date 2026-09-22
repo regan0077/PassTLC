@@ -1,0 +1,49 @@
+{
+  "name": "passtlc",
+  "version": "1.0.0",
+  "private": true,
+  "//build": "Built with webpack on purpose. Next 16 defaults to Turbopack, which needs native SWC bindings; on hosts with an older glibc those fail to load and the WASM fallback cannot drive a Turbopack build, so deployment fails. Webpack builds fine there (it can use the WASM fallback). Use build:turbopack locally for a faster build when native bindings work.",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build --webpack",
+    "start": "next start",
+    "lint": "tsc --noEmit",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "db:seed": "tsx scripts/seed.ts",
+    "db:seed-translations": "tsx scripts/seed-translations.ts",
+    "import:sheet": "tsx scripts/import-sheet.ts",
+    "export:translations": "tsx scripts/export-translations.ts",
+    "remove:categories": "tsx scripts/remove-categories.ts",
+    "build:turbopack": "next build --turbopack"
+  },
+  "dependencies": {
+    "bcryptjs": "2.4.3",
+    "better-sqlite3": "^13.0.3",
+    "jose": "5.9.3",
+    "next": "^16.3.5",
+    "next-intl": "^4.14.3",
+    "nodemailer": "^10.0.10",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
+    "stripe": "16.12.0",
+    "zod": "3.23.8"
+  },
+  "devDependencies": {
+    "@types/bcryptjs": "2.4.6",
+    "@types/better-sqlite3": "^9.6.0",
+    "@types/node": "^22.20.3",
+    "@types/nodemailer": "^8.0.2",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "autoprefixer": "10.4.20",
+    "postcss": "^8.5.28",
+    "tailwindcss": "3.4.10",
+    "tsx": "^4.23.13",
+    "typescript": "5.5.4",
+    "vitest": "^5.0.1"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}
